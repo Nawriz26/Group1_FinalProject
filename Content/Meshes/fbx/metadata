@@ -1,0 +1,102 @@
+{
+	"assetNamespace": "fab",
+	"listing":
+	{
+		"averageRating": 5,
+		"createdAt": "",
+		"description": "<p>Bring your fantasy worlds to life with this <strong>Stylized</strong> <strong>Low-Poly Skeleton</strong> model! this asset features a clean, stylized low-poly aesthetic that's perfect for mobile, VR, or desktop projects.</p><p><strong>Key Features:</strong></p><ul><li><p><strong>Model Details</strong>:</p><ul><li><p>Polygon Count: ~5812 tris</p></li><li><p>Fully rigged with a humanoid skeleton for seamless Mecanim compatibility.</p></li></ul></li><li><p><strong>Animations</strong>: 19 animations crafted for fluid motion. All animations are exported in FBX format and optimized for Unity's Animator system.</p></li><li><p><strong>Easy Integration</strong>: Drag-and-drop ready for Unity <strong>6000.0.29f+</strong> versions. No additional plugins required.</p></li><li><p><strong>Usage Ideas</strong>: Ideal for enemy NPCs in RPGs, platformers, or survival games.</p></li></ul><p><strong>Included Animations (19 Total):</strong></p><ol><li><p>Idle</p></li><li><p>Walk Forward</p></li><li><p>Walk Forward Root Motion</p></li><li><p>Run Forward</p></li><li><p>Run Forward Root Motion</p></li><li><p>Jump</p></li><li><p>Attack Slash 01</p></li><li><p>Attack Slash 02</p></li><li><p>Attack Stab</p></li><li><p>Death</p></li><li><p>Fall</p></li><li><p>Revive</p></li><li><p>Scream</p></li><li><p>Spawn</p></li><li><p>Take Damage</p></li><li><p>Throw Projectile</p></li><li><p>Turn left 90</p></li><li><p>Turn right 90.</p></li><li><p>Underground</p></li></ol><p><strong>Number of textures: </strong>3</p><p><strong>Texture dimensions: </strong>2048x2048</p><p><strong>Polygon count of Skeleton: </strong>5812</p><p><strong>Number of meshes/prefabs: </strong>2</p><p><strong>Rigging: </strong>Yes</p><p><strong>Animation count: </strong>19</p><p><strong>UV mapping: </strong>No</p><p><strong>Types of materials and texture maps : Base Color, Emissive</strong></p>",
+		"isAiForbidden": true,
+		"isAiGenerated": false,
+		"lastUpdatedAt": "",
+		"listingType": "3d-model",
+		"media": "https://media.fab.com/image_previews/gallery_images/466338f0-6322-4f18-a82a-8b24eed54cff/2ba1b422-2d9f-4c5d-b618-a164f83cd57a.png",
+		"publishedAt": "2025-09-23T17:03:26.888211Z",
+		"reviewCount": 1,
+		"thumbnail": "https://media.fab.com/image_previews/gallery_images/7999d78f-98ff-401c-9139-e2fcd1decdf4/1324a88c-51a6-4adf-b757-19d5101ba96b.png",
+		"title": "Stylized Low Poly Skeleton",
+		"uid": "f1efdc03-9272-4757-828c-a1b6ad7ebf2d",
+		"updatedAt": "",
+		"user":
+		{
+			"coverImageUrl": "https://cdn1.epicgames.com/fab/seller/o-u2n4bhqa24uq22euqxwl3n44nz5fdx/backgroundImage/blob-1920x540-138f78e68bea8aa8cc62acbf66855fde.jpg",
+			"profileImageUrl": "https://cdn1.epicgames.com/fab/seller/o-u2n4bhqa24uq22euqxwl3n44nz5fdx/profileImage/blob-500x500-f570e99d06e0f761446430da03dc4a55.jpg",
+			"sellerName": "SazenGames",
+			"uid": "8e83d8c8-4db7-4895-8427-15586e5e9242"
+		},
+		"tags": [
+			{
+				"name": "Lowpoly",
+				"slug": "lowpoly",
+				"uid": "451806dc-649e-43b7-9c2e-a54485de14b6"
+			},
+			{
+				"name": "Skeleton",
+				"slug": "skeleton",
+				"uid": "f4ef6c00-69c9-4732-9eab-829793d729d0"
+			}
+		],
+		"category":
+		{
+			"name": "Characters & Creatures",
+			"path": "characters-creatures",
+			"slug": "characters-creatures",
+			"uid": "358f4f32-1ca9-42ec-9be6-24303e41b412"
+		},
+		"assetFormats": [
+			{
+				"assetFormatType":
+				{
+					"name": "Additional files",
+					"groupName": "Other Formats",
+					"code": "additional-files",
+					"icon": "file",
+					"extensions": [
+						"zip"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "FBX",
+					"groupName": "3D Exchange Formats",
+					"code": "fbx",
+					"icon": "cube",
+					"extensions": [
+						"fbx"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "Unity",
+					"groupName": "Game Engine Formats",
+					"code": "unity",
+					"icon": "unity",
+					"extensions": [
+						"unitypackage"
+					]
+				}
+			}
+		],
+		"_PluginMetas":
+		{
+			"apiDataVersion": "0.0.1",
+			"entitlementUid": "0cb339a6-745a-4f78-8549-fa37c441bc16",
+			"cacheSize": 0,
+			"downloaded": []
+		}
+	},
+	"target": "",
+	"quality": "",
+	"format": "fbx",
+	"fileId": "5ae975e2-d10f-4a9d-abff-4d5f8ed0e7f5",
+	"platformIncluded": "",
+	"distributionPointBaseUrls": [],
+	"distributionMethod": "",
+	"entitlementUid": "0cb339a6-745a-4f78-8549-fa37c441bc16",
+	"invertedNormal": false,
+	"isConverted": false,
+	"isQuixel": false
+}
