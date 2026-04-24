@@ -1,12 +1,12 @@
 // GameplaySystemsLabCharacter.h
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "DestroyableActor.h"
+#include "DamageableActor.h"
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
 
-ADestroyableActor::ADestroyableActor()
+ADamageableActor::ADamageableActor()
 {
     PrimaryActorTick.bCanEverTick = false;
 
@@ -17,28 +17,33 @@ ADestroyableActor::ADestroyableActor()
     Mesh->SetNotifyRigidBodyCollision(true);
     Mesh->SetCollisionProfileName(TEXT("BlockAll"));
 
-    Mesh->OnComponentHit.AddDynamic(this, &ADestroyableActor::OnHit);
+    Mesh->OnComponentHit.AddDynamic(this, &ADamageableActor::OnHit);
 }
 
-void ADestroyableActor::BeginPlay()
+void ADamageableActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+    CurrentHealth = MaxHealth;
 }
 
-void ADestroyableActor::OnHit(
+void ADamageableActor::OnHit(
     UPrimitiveComponent* HitComp,
     AActor* OtherActor,
     UPrimitiveComponent* OtherComp,
     FVector NormalImpulse,
-    const FHitResult& Hit)
+    const FHitResult& Hit
+)
 {
-    if (OtherActor && OtherActor != this)
+    if (OtherActor || OtherActor != this)
     {
-        if (OtherActor || OtherActor != this)
-        {
-			ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
-			if (OtherActor == PlayerCharacter) Destroy();
+		ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
+
+        if (PlayerCharacter && OtherActor == PlayerCharacter) {
+            if (CurrentHealth <= 0.f) {
+                Destroy();
+			}
+			CurrentHealth -= DamagePerHit;
         }
     }
+
 }
