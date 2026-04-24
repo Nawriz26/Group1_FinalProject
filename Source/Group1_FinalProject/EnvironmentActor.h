@@ -25,11 +25,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-
-	// =========================
 	// Components
-	// =========================
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USceneComponent* SceneRoot;
 
@@ -39,11 +35,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UPointLightComponent* PointLight;
 
-
-	// =========================
 	// Transform Control
-	// =========================
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Transform Control", meta = (AllowPrivateAccess = "true"))
 	float RotationSpeed;
 
@@ -56,11 +48,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Transform Control", meta = (AllowPrivateAccess = "true"))
 	float OscillationSpeed;
 
-
-	// =========================
 	// Material Control
-	// =========================
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Material Control", meta = (AllowPrivateAccess = "true"))
 	float MaterialScalarValue;
 
@@ -73,11 +61,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Material Control", meta = (AllowPrivateAccess = "true"))
 	FName ColorParameterName;
 
-
-	// =========================
-	// Lighting Control (YOUR PART)
-	// =========================
-
+	// Lighting Control
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Lighting Control", meta = (AllowPrivateAccess = "true"))
 	float MinLightIntensity;
 
@@ -93,11 +77,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Lighting Control", meta = (AllowPrivateAccess = "true"))
 	bool bLightEnabled;
 
-
-	// =========================
 	// Runtime State
-	// =========================
-
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Runtime", meta = (AllowPrivateAccess = "true"))
 	FVector DefaultLocation;
 
@@ -106,7 +86,6 @@ private:
 
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Runtime", meta = (AllowPrivateAccess = "true"))
 	FTransform DefaultTransform;
-
 
 	// Runtime Objects
 	UMaterialInstanceDynamic* DynamicMaterial;
@@ -118,26 +97,17 @@ private:
 
 public:
 
-	// =========================
 	// Lighting Functions
-	// =========================
-
 	UFUNCTION(BlueprintCallable, Category = "Environment Actor|Lighting")
 	void ToggleLightState();
 
 
-	// =========================
 	// Material Functions
-	// =========================
-
 	UFUNCTION(BlueprintCallable, Category = "Environment Actor|Material")
 	void UpdateMaterialParameters();
 
 
-	// =========================
 	// Transform Functions
-	// =========================
-
 	UFUNCTION(BlueprintCallable, Category = "Environment Actor|Transform")
 	void ResetActorTransform();
 
