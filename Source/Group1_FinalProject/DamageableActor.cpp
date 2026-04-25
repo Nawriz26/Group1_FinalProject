@@ -18,12 +18,12 @@ ADamageableActor::ADamageableActor()
     Mesh->SetCollisionProfileName(TEXT("BlockAll"));
 
     Mesh->OnComponentHit.AddDynamic(this, &ADamageableActor::OnHit);
+    CurrentHealth = MaxHealth;
 }
 
 void ADamageableActor::BeginPlay()
 {
 	Super::BeginPlay();
-    CurrentHealth = MaxHealth;
 }
 
 void ADamageableActor::OnHit(

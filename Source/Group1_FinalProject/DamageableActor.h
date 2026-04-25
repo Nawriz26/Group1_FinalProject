@@ -9,9 +9,6 @@
 
 class UStaticMeshComponent;
 
-// ================================================================
-// THIS CLASS WILL ALSO BE EXTENDED BY BluePrints
-// ================================================================
 UCLASS()
 class GROUP1_FINALPROJECT_API ADamageableActor : public AActor
 {
