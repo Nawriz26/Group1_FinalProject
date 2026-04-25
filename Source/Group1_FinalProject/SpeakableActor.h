@@ -6,21 +6,39 @@
 #include "GameFramework/Actor.h"
 #include "SpeakableActor.generated.h"
 
+class UBoxComponent;
+class USoundBase;
+class UPrimitiveComponent;
+
 UCLASS()
 class GROUP1_FINALPROJECT_API ASpeakableActor : public AActor
 {
-	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	ASpeakableActor();
+    GENERATED_BODY()
+
+public:
+    ASpeakableActor();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+    virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+public:
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    UBoxComponent* BoxCollider;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundBase* SpeakSound;
+
+private:
+    bool bHasPlayedSound = false;
+
+public:
+    UFUNCTION()
+    void OnBoxBeginOverlap(
+        UPrimitiveComponent* OverlappedComponent,
+        AActor* OtherActor,
+        UPrimitiveComponent* OtherComp,
+        int32 OtherBodyIndex,
+        bool bFromSweep,
+        const FHitResult& SweepResult
+    );
 };

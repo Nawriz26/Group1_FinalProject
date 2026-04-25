@@ -2,26 +2,61 @@
 
 
 #include "SpeakableActor.h"
+#include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Pawn.h"
+#include "Sound/SoundBase.h"
 
-// Sets default values
 ASpeakableActor::ASpeakableActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+    PrimaryActorTick.bCanEverTick = false;
 
+    BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
+    RootComponent = BoxCollider;
+
+    BoxCollider->SetBoxExtent(FVector(100.f, 100.f, 100.f));
+    BoxCollider->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    BoxCollider->SetCollisionResponseToAllChannels(ECR_Ignore);
+    BoxCollider->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+    BoxCollider->SetGenerateOverlapEvents(true);
+
+    BoxCollider->OnComponentBeginOverlap.AddDynamic(
+        this,
+        &ASpeakableActor::OnBoxBeginOverlap
+    );
 }
 
-// Called when the game starts or when spawned
 void ASpeakableActor::BeginPlay()
 {
-	Super::BeginPlay();
-	
+    Super::BeginPlay();
 }
 
-// Called every frame
-void ASpeakableActor::Tick(float DeltaTime)
+void ASpeakableActor::OnBoxBeginOverlap(
+    UPrimitiveComponent* OverlappedComponent,
+    AActor* OtherActor,
+    UPrimitiveComponent* OtherComp,
+    int32 OtherBodyIndex,
+    bool bFromSweep,
+    const FHitResult& SweepResult
+)
 {
-	Super::Tick(DeltaTime);
+    if (bHasPlayedSound)
+    {
+        return;
+    }
 
+    AActor* Player = UGameplayStatics::GetPlayerPawn(this, 0);
+
+    if (OtherActor == Player && SpeakSound)
+    {
+        bHasPlayedSound = true;
+
+        UGameplayStatics::PlaySoundAtLocation(
+            this,
+            SpeakSound,
+            GetActorLocation()
+        );
+
+        BoxCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+    }
 }
-

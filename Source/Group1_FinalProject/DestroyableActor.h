@@ -8,6 +8,7 @@
 #include "DestroyableActor.generated.h"
 
 class UStaticMeshComponent;
+class USoundBase;
 
 UCLASS()
 class GROUP1_FINALPROJECT_API ADestroyableActor : public AActor
@@ -23,6 +24,9 @@ protected:
 public:	
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UStaticMeshComponent* Mesh;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundBase* DestroySound;
 
     UFUNCTION()
     void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,

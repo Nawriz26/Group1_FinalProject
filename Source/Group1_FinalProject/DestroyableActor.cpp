@@ -35,10 +35,18 @@ void ADestroyableActor::OnHit(
 {
     if (OtherActor && OtherActor != this)
     {
-        if (OtherActor || OtherActor != this)
-        {
-			ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
-			if (OtherActor == PlayerCharacter) Destroy();
+		ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
+        if (OtherActor == PlayerCharacter) {
+            if (DestroySound)
+            {
+                UGameplayStatics::PlaySoundAtLocation(
+                    this,
+                    DestroySound,
+                    GetActorLocation()
+                );
+            }
+
+            Destroy();
         }
     }
 }
