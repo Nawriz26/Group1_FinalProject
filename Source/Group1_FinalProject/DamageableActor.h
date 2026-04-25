@@ -8,6 +8,7 @@
 #include "DamageableActor.generated.h"
 
 class UStaticMeshComponent;
+class USoundBase;
 
 UCLASS()
 class GROUP1_FINALPROJECT_API ADamageableActor : public AActor
@@ -23,6 +24,9 @@ protected:
 public:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UStaticMeshComponent* Mesh;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundBase* DestroySound;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Damage")
     float MaxHealth = 50.f;

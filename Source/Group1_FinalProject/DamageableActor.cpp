@@ -40,6 +40,15 @@ void ADamageableActor::OnHit(
 
         if (PlayerCharacter && OtherActor == PlayerCharacter) {
             if (CurrentHealth <= 0.f) {
+				if (DestroySound)
+				{
+					UGameplayStatics::PlaySoundAtLocation(
+						this,
+						DestroySound,
+						GetActorLocation()
+					);
+				}
+
                 Destroy();
 			}
 			CurrentHealth -= DamagePerHit;
