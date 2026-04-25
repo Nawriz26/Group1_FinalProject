@@ -58,6 +58,7 @@ void AUnlockWallsAndEnemiesActor::OnOverlapBegin(UPrimitiveComponent* Overlapped
 				UnlockSound,
 				GetActorLocation()
 			);
+            Destroy();
 		}
     }
 }
